@@ -1191,11 +1191,52 @@
   .tc-empty-hint { font-size: 11px; color: var(--muted); font-style: italic; padding: 8px; text-align: center; }
   .tc-error { color: #c87f7f; font-size: 10px; font-family: 'Share Tech Mono', monospace; }
 
+  .tool-nav {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: rgba(20,20,20,0.85);
+    color: var(--gold);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .tool-nav:hover { border-color: var(--gold); color: var(--gold-bright); box-shadow: 0 0 12px rgba(201,168,76,0.25); }
+  .tool-nav-icon { font-size: 15px; line-height: 1; }
+  @media (max-width: 700px) {
+    header { padding-top: 58px; }
+    .tool-nav { left: 50%; right: auto; transform: translateX(-50%); }
+  }
+
+  .more-tools { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
+  .more-tools-inner { border: 1px solid var(--border); background: var(--panel); border-radius: 4px; overflow: hidden; }
+  .more-tools-head { padding: 12px 18px; border-bottom: 1px solid var(--border); font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; background: linear-gradient(90deg, rgba(139,26,26,0.15), transparent); }
+  .more-tools-body { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 20px 18px; }
+  .more-tools-body h2 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); letter-spacing: 2px; margin-bottom: 8px; }
+  .more-tools-body p { font-size: 12px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+  .more-tools-list { list-style: none; font-size: 11px; line-height: 1.9; color: var(--muted); }
+  .more-tools-list li::before { content: '▸ '; color: var(--gold); }
+  .more-tools-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--red); border: 1px solid var(--red-bright); color: #fff; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 3px; white-space: nowrap; transition: all 0.2s; }
+  .more-tools-btn:hover { background: var(--red-bright); box-shadow: 0 0 16px rgba(192,57,43,0.4); }
+  @media (max-width: 700px) { .more-tools-body { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
 
 <header>
+  <a class="tool-nav" href="country-generator.html" title="HOI4 Country Generator"><span class="tool-nav-icon">🌐</span>Country Generator</a>
   <h1>⚔ HOI4 Character Generator</h1>
   <div class="subtitle">Hearts of Iron IV · Country Leader Tool</div>
 </header>
@@ -1243,6 +1284,27 @@
   </div>
 
 </div>
+
+<section class="more-tools" id="country-generator">
+  <div class="more-tools-inner">
+    <div class="more-tools-head">🌐 New Tool</div>
+    <div class="more-tools-body">
+      <div>
+        <h2>HOI4 Country Generator</h2>
+        <p>Add a brand-new country to your Hearts of Iron IV mod in minutes. Pick a TAG, name, and color, drop in your flags, and download a ready-to-use mod .zip with every file already in the right folder.</p>
+        <ul class="more-tools-list">
+          <li>Country tag, common/countries, colors.txt and history/countries files</li>
+          <li>Drag &amp; drop flags, auto-converted to TGA in all three sizes (large, medium, small)</li>
+          <li>Separate flags for each ideology</li>
+          <li>Merges into your existing colors.txt and country_tags file</li>
+          <li>Country names per ideology, plus optional leaders with traits</li>
+          <li>English localisation with the correct UTF-8 BOM</li>
+        </ul>
+      </div>
+      <a class="more-tools-btn" href="country-generator.html"><span>🌐</span> Open Country Generator</a>
+    </div>
+  </div>
+</section>
 
 <div class="toast" id="toast">Copied!</div>
 
